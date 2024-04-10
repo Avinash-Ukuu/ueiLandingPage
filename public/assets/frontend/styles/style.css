@@ -1,0 +1,407 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+:root {
+    --primaryColor: #1D1D1D;
+    --secondaryColor: #F84520;
+    --textColor: #484747;
+    --whiteColor: #ffffff;
+
+}
+
+
+
+a,
+p,
+li,
+ul {
+    text-decoration: none;
+    list-style: none;
+    font-size: 14px;
+    line-height: 28px;
+    color: initial;
+}
+
+.container {
+    width: 1200px;
+    margin: auto;
+}
+
+.Commanheading {
+    font-size: 22px;
+    position: relative;
+    padding: 0 60px;
+    width: fit-content;
+    margin-bottom: 20px;
+}
+
+.Commanheading::before {
+    content: '';
+    left: 0;
+    position: absolute;
+    top: 19px;
+    width: 40px;
+    height: 2px;
+    background-color: var(--textColor);
+}
+
+.Commanheading::after {
+    content: '';
+    right: 0;
+    position: absolute;
+    top: 19px;
+    width: 40px;
+    height: 2px;
+    background-color: var(--textColor);
+}
+
+.arrow-down {
+    margin: 38px;
+    text-align: center;
+}
+
+
+.CommanButton {
+    margin: auto;
+    gap: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 283px;
+    height: 50px;
+    color: var(--whiteColor);
+    font-weight: 500;
+    font-size: 15px;
+    text-align: center;
+}
+
+.orange {
+   color: var(--secondaryColor);
+   font-weight: 700;
+}
+
+.Commanparagraph .orange{
+    margin: auto;
+}
+
+.CommanButton.black {
+    background-color: var(--primaryColor);
+}
+
+.top_header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu_list {
+    font-weight: bold;
+    display: flex;
+    gap: 53px;
+    align-items: center;
+    padding: 20px;
+}
+
+.banner {
+    padding: 2rem 3rem;
+    background-image: url(../asset//images//backgroundImage.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    
+}
+
+.Amazing {
+
+    padding: 8rem 3rem;
+}
+
+.Amazing h1 {
+    margin: auto;
+    text-align: center;
+    font-size: 50px;
+}
+
+.Amazing p {
+    line-height: 28px;
+    padding: 20px;
+    margin: auto;
+    width: 50%;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* section 2 */
+.ABOUT {
+    background-color: var(--primaryColor);
+    color: var(--whiteColor);
+    padding: 160px 0;
+    padding-bottom: 0;
+    position: relative;
+}
+
+.Commanparagraph .orange {
+    color: var(--secondaryColor);
+}
+
+.commanjustifty {
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+}
+.Commanparagraph .white{
+    color: var(--whiteColor);
+}
+
+.aboutMain{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.commanabout {
+    display: flex;
+    width: 40%;
+}
+.rate_pass{
+    position: absolute;
+    top: -100px;
+    padding: 56px;
+    display: flex;
+    background-color: var(--secondaryColor);
+    color: var(--whiteColor);
+    justify-content: space-around;
+    width: 60%;
+}
+.rate_pass H3{
+font-size: 52px;
+}
+.rates p{
+    color: var(--whiteColor); 
+    font-size: 16px;
+}
+/* section 3 */
+.Services {
+    padding: 90px 0;
+}
+
+.Services .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.images{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+}
+.Commanheading.center{
+    text-align: center;
+}
+
+.serviceContainer{
+    display: flex;
+    justify-content: space-between;
+}
+
+.serviceList{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 13px;
+    text-align: center;
+    width: 24%; 
+}
+
+.serviceList:hover{
+    background-color: var(--secondaryColor);
+    transition: 0.5s all;
+    cursor: pointer;
+}
+
+.serviceList:hover P{
+    color: var(--whiteColor);
+    transition: 0.5s all;
+
+}
+
+.serviceList span img{
+    width: 60px;
+    height: 60px;
+}
+
+.name{
+    font-size: 18px;
+    margin: 50px 0;
+}
+
+.Services .Commanparagraph.orange{
+    margin-bottom: 100px;
+}
+
+.programs .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.programList{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.programList li{
+    cursor: pointer;
+    font-weight: 600;
+}
+.programMax{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    border: 1px solid #e0e0e0;
+    margin-top: 20px;
+    width: 30%;
+}
+.programMax a{
+    padding: 5px 20px;
+    color: var(--whiteColor);
+    background-color: var(--secondaryColor);
+    margin-top: 30px;
+}
+.programMain{
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.programMax p{
+    margin-top: 30px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.programMax span img{
+    width: 300px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.programList{
+    margin: 40px 0;
+
+}
+
+.testi{
+    padding: 90px 0;
+    padding-bottom: 20px;
+    background-color: var(--primaryColor);
+    margin-top: 50px;
+}
+
+.testi .testiMain{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.testi .Commanheading h2{
+    color: var(--whiteColor);
+}
+.testiList{
+
+    display: flex;
+    width: 48%;
+
+}
+
+.testi .headSupport{
+    color: var(--whiteColor);
+}
+
+
+.list{
+    text-align: center;
+    margin: 80px 0;
+    
+}
+
+.list *{
+
+    color: var(--whiteColor);
+
+}
+
+
+.list span img{
+    margin: 50px 0;
+}
+
+.listMain{
+    display: flex;
+    justify-content: space-between;
+    padding: 90px 0;
+}
+
+.form{
+    width: 40%;
+    padding: 40px;
+    background-color: var(--secondaryColor);
+  }
+  
+  form label{
+    font-size: 1.2rem;
+    color: var(--whiteColor);
+
+  }
+
+  .form input , .form textarea{
+    margin-top: 30px!important;
+    margin-bottom: 20px;
+  }
+  
+  input, textarea, button {
+    width: 100%;
+    padding: 0.5em;
+    border: none;
+    font-size: 1.2rem;
+  }
+  input, input[type="email"], textarea {
+    margin: 0 0 1em;
+    border: 1px solid #ccc;
+    outline: none;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    height: 48px;
+  }
+  input::placeholder , textarea::placeholder{
+    font-size: 14px;
+  }
+  textarea {
+    height: 6em;
+  }
+  input[type="submit"], button {
+    background: var(--primaryColor);
+    color: #fff;
+    cursor: pointer;
+  }
+  input[type="submit"]:hover, button:hover {
+    background: #6E65F4;
+  }
+
+  .NamePer{
+    margin-top: 20px;
+  }
+  
