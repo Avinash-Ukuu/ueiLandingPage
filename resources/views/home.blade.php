@@ -6,6 +6,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{asset('assets/frontend/styles/style.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
     <title>UEI Landing Page</title>
 </head>
 
@@ -284,8 +285,9 @@
 
                         <div class="form">
 
-                            <form url="{{route('enquirySubmit')}}" method="POST" autocomplete="off">
+                            <form id="enquiry-form" autocomplete="off">
                                 @csrf
+                                <input type="hidden" name="honeyspot">
                                 <label for="name">Your Name</label>
                                 <input type="text" name="name" placeholder="Your Name">
 
@@ -298,7 +300,7 @@
                                 <label for="message">Message</label>
                                 <textarea name="message" placeholder="Message"></textarea>
 
-                                <input type="submit" value="Submit">
+                                <input class="submit_button" type="submit" value="Submit">
                             </form>
 
                         </div>
@@ -309,7 +311,33 @@
         </section>
 
     </main>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 </body>
+
+<script>
+    $('#enquiry-form').on('submit', function() {
+        event.preventDefault();
+        var formData = $(this).serialize();
+        var route = "{{ route('enquirySubmit') }}";
+        $.ajax({
+            url: route,
+            type: 'POST',
+            data: formData,
+            success: function(response) {
+                if (response == 'true') {
+                    toastr.success('Enquiry Submit', 'Success');
+                    location.reload();
+                }
+            },
+            error: function(err) {
+               console.log(err);
+            }
+        });
+
+
+    });
+
+</script>
 
 </html>
