@@ -110,7 +110,7 @@ ul {
     background-image: url(../asset//images//backgroundImage.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    
+
 }
 
 .Amazing {
@@ -179,7 +179,7 @@ ul {
 font-size: 52px;
 }
 .rates p{
-    color: var(--whiteColor); 
+    color: var(--whiteColor);
     font-size: 16px;
 }
 /* section 3 */
@@ -217,7 +217,7 @@ font-size: 52px;
     justify-content: center;
     padding: 50px 13px;
     text-align: center;
-    width: 24%; 
+    width: 24%;
 }
 
 .serviceList:hover{
@@ -335,7 +335,7 @@ font-size: 52px;
 .list{
     text-align: center;
     margin: 80px 0;
-    
+
 }
 
 .list *{
@@ -352,15 +352,16 @@ font-size: 52px;
 .listMain{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 90px 0;
 }
 
 .form{
     width: 40%;
     padding: 40px;
-    background-color: var(--secondaryColor);
+    background-color:#821600;
   }
-  
+
   form label{
     font-size: 1.2rem;
     color: var(--whiteColor);
@@ -371,7 +372,7 @@ font-size: 52px;
     margin-top: 30px!important;
     margin-bottom: 20px;
   }
-  
+
   input, textarea, button {
     width: 100%;
     padding: 0.5em;
@@ -404,4 +405,44 @@ font-size: 52px;
   .NamePer{
     margin-top: 20px;
   }
-  
+
+
+  .popup{
+    position: fixed;
+    top: 10%;
+    z-index: 10;
+    margin: auto;
+    width: 100%;
+  }
+
+  .popupmain{
+    margin: auto;
+    width: fit-content;
+  }
+
+  .popupmain .form{
+    margin: auto;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 2px;
+    right:38%;
+    padding: 10px 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+}
+
+.close-btn:hover {
+    color: #f00;
+}
+.deplomaCourse, .certificationCourse{
+    display: none;
+}
+
+#degreeCourses{
+    color: white;
+    background: #821600;
+    padding: 0 8px;
+}

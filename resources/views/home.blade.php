@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{asset('assets/frontend/styles/style.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/frontend/styles/style.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
     <title>UEI Landing Page</title>
 </head>
@@ -30,7 +30,7 @@
                 <header>
                     <div class="top_header">
                         <div class="logo">
-                            <img src="{{asset('assets/frontend/asset/images/logo.webp')}}" alt="">
+                            <img src="{{ asset('assets/frontend/asset/images/logo.webp') }}" alt="">
                         </div>
                         <div class="MENU">
                             <nav>
@@ -38,16 +38,16 @@
                                     <a href="">
                                         <li>HOME</li>
                                     </a>
-                                    <a href="">
+                                    <a href="#about-section">
                                         <li>ABOUT US</li>
                                     </a>
-                                    <a href="">
+                                    <a href="#service-section">
                                         <li>SERVICES</li>
                                     </a>
-                                    <a href="">
+                                    <a href="#course-section">
                                         <li>Courses</li>
                                     </a>
-                                    <a href="">
+                                    <a href="#contact-us-section">
                                         <li>Contact Us</li>
                                     </a>
                                 </ul>
@@ -65,11 +65,11 @@
 
 
                     <div class="CommanButton">
-                        <a href="" class="CommanButton orange">Get a Call</a>
-                        <a href="" class="CommanButton black">Enquire Now</a>
+                        <a href="#" class="CommanButton orange">Get a Call</a>
+                        <a href="javascript:void(0)" class="CommanButton black" id="enquiryPopup">Enquire Now</a>
                     </div>
                     <div class="arrow-down">
-                        <img src="{{asset('assets/frontend/asset/images/Link → arrow-down.png.png')}}" alt="">
+                        <img src="{{ asset('assets/frontend/asset/images/Link → arrow-down.png.png') }}" alt="">
 
                     </div>
 
@@ -77,7 +77,7 @@
             </div>
         </section>
 
-        <section class="ABOUT">
+        <section class="ABOUT" id="about-section">
             <div class="container">
                 <div class="rate_pass">
                     <div class="rates">
@@ -111,14 +111,14 @@
                         </div>
                     </div>
                     <div class="commanabout">
-                        <img src="{{asset('assets/frontend/asset/images/about-image.png.png')}}" alt="">
+                        <img src="{{ asset('assets/frontend/asset/images/about-image.png.png') }}" alt="">
                     </div>
                 </div>
             </div>
 
         </section>
 
-        <section class=" Services ">
+        <section class=" Services" id="service-section">
             <div class="container">
                 <div class="Commanheading">
                     <h2>Services</h2>
@@ -128,7 +128,7 @@
                 <div class="serviceContainer">
                     <div class="serviceList">
                         <span class="images">
-                            <img src="{{asset('assets/frontend/asset/images/learning.png')}}" alt="iconOne">
+                            <img src="{{ asset('assets/frontend/asset/images/learning.png') }}" alt="iconOne">
                         </span>
                         <p class="name">DIPLOMA COURSES</p>
                         <p>UEI Global offering Diploma and Degree in Hotel Management both at bachelors and masters
@@ -136,7 +136,7 @@
                     </div>
                     <div class="serviceList">
                         <span class="images">
-                            <img src="{{asset('assets/frontend/asset/images/learning.png')}}" alt="iconOne">
+                            <img src="{{ asset('assets/frontend/asset/images/learning.png') }}" alt="iconOne">
                         </span>
                         <p class="name">CERTIFICATION COURSE</p>
                         <p>UEI Global offering certifications as Hotel Management at bachelors level.</p>
@@ -144,7 +144,7 @@
 
                     <div class="serviceList">
                         <span class="images">
-                            <img src="{{asset('assets/frontend/asset/images/learning.png')}}" alt="iconOne">
+                            <img src="{{ asset('assets/frontend/asset/images/learning.png') }}" alt="iconOne">
                         </span>
                         <p class="name">SHORT TERM COOKING COURSES</p>
                         <p>Job Opportunities and Future of Culinary/Cooking Courses</p>
@@ -153,38 +153,38 @@
             </div>
         </section>
 
-        <section class="programs">
+        <section class="programs" id="course-section">
             <div class="container">
                 <div class="Commanheading">
                     <h2>Courses</h2>
                 </div>
                 <p class="Commanparagraph orange">KNOW ABOUT US A LITTLE MORE</p>
                 <ul class="programList">
-                    <li>Degree Courses</li>
-                    <li>Diploma Courses</li>
-                    <li>Certification Courses</li>
+                    <li id="degreeCourses" onclick="courseTab('degreeCourses')">Degree Courses</li>
+                    <li id="deplomaCourse" onclick="courseTab('deplomaCourse')">Diploma Courses</li>
+                    <li id="certificationCourse" onclick="courseTab('certificationCourse')">Certification Courses</li>
                 </ul>
                 <div class="programMain">
                     <!-- degree Courses -->
-                    <div class="programMax">
+                    <div class="programMax degreeCourses">
                         <span>
-                            <img src="{{asset('assets/frontend/asset/images/bhm.png')}}" alt="courseimg">
+                            <img src="{{ asset('assets/frontend/asset/images/bhm.png') }}" alt="courseimg">
                         </span>
                         <p>BACHELORS IN
                             HOSPITALITY MANAGEMENT</p>
                         <a href="">Know More</a>
                     </div>
-                    <div class="programMax">
+                    <div class="programMax degreeCourses">
                         <span>
-                            <img src="{{asset('assets/frontend/asset/images/bhm.png')}}" alt="courseimg">
+                            <img src="{{ asset('assets/frontend/asset/images/bhm.png') }}" alt="courseimg">
                         </span>
                         <p>BACHELORS IN
                             HOSPITALITY MANAGEMENT <BR /> (International Specialization)</p>
                         <a href="">Know More</a>
                     </div>
-                    <div class="programMax">
+                    <div class="programMax degreeCourses">
                         <span>
-                            <img src="{{asset('assets/frontend/asset/images/bhm.png')}}" alt="courseimg">
+                            <img src="{{ asset('assets/frontend/asset/images/bhm.png') }}" alt="courseimg">
                         </span>
                         <p>BACHELORS IN
                             HOSPITALITY MANAGEMENT<BR /> (Culinary Specialization)</p>
@@ -196,23 +196,23 @@
                     <!-- Deploma Courses -->
 
 
-                    <div class="programMax">
+                    <div class="programMax deplomaCourse">
                         <span>
-                            <img src="{{asset('assets/frontend/asset/images/Fp.png')}}" alt="courseimg">
+                            <img src="{{ asset('assets/frontend/asset/images/Fp.png') }}" alt="courseimg">
                         </span>
                         <p>FOOD PRODUCTION</p>
                         <a href="">Know More</a>
                     </div>
-                    <div class="programMax">
+                    <div class="programMax deplomaCourse">
                         <span>
-                            <img src="{{asset('assets/frontend/asset/images/backrey.png')}}" alt="courseimg">
+                            <img src="{{ asset('assets/frontend/asset/images/backrey.png') }}" alt="courseimg">
                         </span>
                         <p>BAKERY & CONFECTIONERY</p>
                         <a href="">Know More</a>
                     </div>
-                    <div class="programMax">
+                    <div class="programMax deplomaCourse">
                         <span>
-                            <img src="{{asset('assets/frontend/asset/images/hm.png')}}" alt="courseimg">
+                            <img src="{{ asset('assets/frontend/asset/images/hm.png') }}" alt="courseimg">
                         </span>
                         <p>HOTEL MANAGEMENT</p>
                         <a href="">Know More</a>
@@ -226,30 +226,30 @@
                     <!-- Certification Course -->
 
 
-                    <div class="programMax">
+                    <div class="programMax certificationCourse">
                         <span>
-                            <img src="{{asset('assets/frontend/asset//images/fb.png')}}" alt="courseimg">
+                            <img src="{{ asset('assets/frontend/asset//images/fb.png') }}" alt="courseimg">
                         </span>
                         <p>CERTIFICATE IN F&B SERVICE</p>
                         <a href="">Know More</a>
                     </div>
-                    <div class="programMax">
+                    <div class="programMax certificationCourse">
                         <span>
-                            <img src="{{asset('assets/frontend/asset//images/fb.png')}}" alt="courseimg">
+                            <img src="{{ asset('assets/frontend/asset//images/fb.png') }}" alt="courseimg">
                         </span>
                         <p>CERTIFICATE IN F&B PRODUCTION</p>
                         <a href="">Know More</a>
                     </div>
-                    <div class="programMax">
+                    <div class="programMax certificationCourse">
                         <span>
-                            <img src="{{asset('assets/frontend/asset/images/hs.png')}}" alt="courseimg">
+                            <img src="{{ asset('assets/frontend/asset/images/hs.png') }}" alt="courseimg">
                         </span>
                         <p>CERTIFICATE IN HOUSEKEEPING MANAGEMENT</p>
                         <a href="">Know More</a>
                     </div>
-                    <div class="programMax">
+                    <div class="programMax certificationCourse">
                         <span>
-                            <img src="{{asset('assets/frontend/asset//images/fo.png')}}" alt="courseimg">
+                            <img src="{{ asset('assets/frontend/asset//images/fo.png') }}" alt="courseimg">
                         </span>
                         <p>CERTIFICATE IN FRONT OFFICE MANAGEMENT</p>
                         <a href="">Know More</a>
@@ -260,7 +260,7 @@
             </div>
         </section>
 
-        <section class="testi">
+        <section class="testi" id="contact-us-section">
             <div class="container">
                 <div class="testiMain">
                     <div class="Commanheading">
@@ -271,7 +271,8 @@
 
                         <div class="testiList">
                             <div class="list">
-                                <p class="parah">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                <p class="parah">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                    eiusmod
                                     tempor incididunt ut
                                     labore. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
                                     tempor
@@ -285,19 +286,19 @@
 
                         <div class="form">
 
-                            <form id="enquiry-form" autocomplete="off">
+                            <form class="enquiry-form" autocomplete="off">
                                 @csrf
                                 <input type="hidden" name="honeyspot">
-                                <label for="name">Your Name</label>
+                                <label for="name">Your Name</label> &nbsp;<span style="color: red">*</span>
                                 <input type="text" name="name" placeholder="Your Name">
 
-                                <label for="email">Email</label>
+                                <label for="email">Email</label>&nbsp;<span style="color: red">*</span>
                                 <input type="email" name="email" placeholder="Email">
 
-                                <label for="mobile">Number</label>
+                                <label for="mobile">Number</label>&nbsp;<span style="color: red">*</span>
                                 <input type="tel" name="number" placeholder="Your Mobile Number">
 
-                                <label for="message">Message</label>
+                                <label for="message">Message</label>&nbsp;<span style="color: red">*</span>
                                 <textarea name="message" placeholder="Message"></textarea>
 
                                 <input class="submit_button" type="submit" value="Submit">
@@ -310,14 +311,65 @@
             </div>
         </section>
 
+        <div class="popup" style="display: none">
+            <div class="container">
+                <div class="popupmain">
+                    <a href="javascript:void(0)" class="close-btn">×</a>
+                    <div class="form">
+                        <form class="enquiry-form" autocomplete="off">
+                            @csrf
+                            <input type="hidden" name="honeyspot">
+                            <label for="name">Your Name</label>&nbsp;<span style="color: red">*</span>
+                            <input type="text" name="name" placeholder="Your Name">
+
+                            <label for="email">Email</label>&nbsp;<span style="color: red">*</span>
+                            <input type="email" name="email" placeholder="Email">
+
+                            <label for="mobile">Number</label>&nbsp;<span style="color: red">*</span>
+                            <input type="tel" name="number" placeholder="Your Mobile Number">
+
+                            <label for="message">Message</label>&nbsp;<span style="color: red">*</span>
+                            <textarea name="message" placeholder="Message"></textarea>
+
+                            <input class="submit_button" type="submit" value="Submit">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
     </main>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 </body>
 
 <script>
-    $('#enquiry-form').on('submit', function() {
+    $(document).ready(function() {
+        $("#enquiryPopup").on('click', function() {
+            $(".popup").css('display', 'block');
+            $("body").css('overflow', 'hidden');
+        });
+
+        $(".close-btn").on('click', function() {
+            $(".popup").css('display', 'none');
+            $("body").css('overflow', 'auto');
+        });
+    });
+
+    $('.enquiry-form').on('submit', function() {
         event.preventDefault();
+        var isEmpty = false;
+        $(this).find('input[type="text"], input[type="email"], input[type="tel"], textarea').each(function() {
+            if ($.trim($(this).val()) === '') {
+                isEmpty = true;
+            }
+        });
+        if (isEmpty) {
+            alert('All fields are required.');
+            return;
+        }
         var formData = $(this).serialize();
         var route = "{{ route('enquirySubmit') }}";
         $.ajax({
@@ -331,13 +383,27 @@
                 }
             },
             error: function(err) {
-               console.log(err);
+                console.log(err);
             }
         });
-
-
     });
 
+    function courseTab(val) {
+        const tabIds = ['degreeCourses', 'deplomaCourse', 'certificationCourse'];
+        tabIds.forEach(id => {
+            $('#' + id).css({
+                'background': 'none',
+                'color': 'black'
+            });
+            $('.' + id).css('display', 'none');
+        });
+        $('#' + val).css({
+            'background': '#821600',
+            'color': 'white',
+            'padding': '0 8px'
+        });
+        $('.' + val).css('display', 'block');
+    }
 </script>
 
 </html>
