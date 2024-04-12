@@ -32,11 +32,12 @@
                         <div class="logo">
                             <img src="{{ asset('assets/frontend/asset/images/logo.webp') }}" alt="">
                         </div>
-                        <span class="hamburger"><img src="{{ asset('assets/frontend/asset/images/bars.png') }}" alt=""></span>
+                        <span class="hamburger"><img src="{{ asset('assets/frontend/asset/images/bars.png') }}"
+                                alt=""></span>
                         <div class="menu">
                             <nav>
                                 <ul class="menu_list">
-                                    <a href="javascript:void(0)" class="">×</a>
+                                    <a href="javascript:void(0)" class="sidebarCross">×</a>
                                     <a href="javascript:void(0)">
                                         <li>HOME</li>
                                     </a>
@@ -310,7 +311,17 @@
                                 <div class="inputContainer">
                                     <textarea name="message" placeholder="Message"></textarea>
                                 </div>
-
+                                <div class="concentMain">
+                                    <input type="checkbox" name="contactConsent" id="checkConsent">
+                                    <label for="checkConsent">By submitting this enquiry I agree to be contacted in the
+                                        most suitable manner (by phone or email) in order to respond to my
+                                        enquiry.</label>
+                                </div>
+                                <p id="contact-consent"
+                                    style="transform: translateX(20px);
+                                margin-bottom:0;margin-top:20px;color:red;display:none;">
+                                    We
+                                    cannot submit your enquiry without contact consent</p>
                                 <input class="submit_button" type="submit" value="Submit">
                             </form>
 
@@ -342,6 +353,17 @@
                             <label for="message">Message</label>&nbsp;<span style="color: red">*</span>
                             <textarea name="message" placeholder="Message"></textarea>
 
+                            <div class="concentMain">
+                                <input type="checkbox" name="contactConsent" id="checkConsent">
+                                <label for="checkConsent">By submitting this enquiry I agree to be contacted in the
+                                    most suitable manner (by phone or email) in order to respond to my
+                                    enquiry.</label>
+                            </div>
+                            <p id="contact-consent"
+                                style="transform: translateX(20px);
+                            margin-bottom:0;margin-top:20px;color:red;display:none;">
+                                We
+                                cannot submit your enquiry without contact consent</p>
                             <input class="submit_button" type="submit" value="Submit">
                         </form>
                     </div>
@@ -359,9 +381,15 @@
 <script>
     $(document).ready(function() {
 
-        $(".hamburger").on("click" , function(){
-            $(".menu").css("right" , "0")
-        })
+        $(".hamburger").on("click", function() {
+            $(".menu").css("right", "0");
+            $(this).addClass('active');
+        });
+
+        $(".sidebarCross").on("click", function() {
+            $(".menu").css("right", "-500px");
+            $(".hamburger").removeClass('active');
+        });
 
         $(".coustomOpenForm").on('click', function() {
             $(".popup").css('display', 'block');
@@ -374,10 +402,15 @@
     });
 
     $('.enquiry-form').on('submit', function() {
+
+
         event.preventDefault();
         var isValid = true;
-
         var $form = $(this);
+
+
+        $form.find('#contact-consent').hide();
+
         var $name = $form.find('input[name="name"]');
         var $email = $form.find('input[name="email"]');
         var $number = $form.find('input[name="number"]');
@@ -408,6 +441,7 @@
         if (!phonePattern.test($number.val())) {
             isValid = false;
             $number.attr("placeholder", "Number Field is Required");
+            $number.val(null);
             // Add a class to your number input when validation fails
             $number.addClass("error-placeholder");
         }
@@ -425,22 +459,27 @@
             alert('Please enter correct data in the form.');
             return;
         }
-        var formData = $(this).serialize();
-        var route = "{{ route('enquirySubmit') }}";
-        $.ajax({
-            url: route,
-            type: 'POST',
-            data: formData,
-            success: function(response) {
-                if (response == 'true') {
-                    toastr.success('Enquiry Submit', 'Success');
-                    location.reload();
+        if ($form.find('input[name="contactConsent"]').is(":checked") != true) {
+            $form.find('#contact-consent').show();
+            return false;
+        } else {
+            var formData = $form.serialize();
+            var route = "{{ route('enquirySubmit') }}";
+            $.ajax({
+                url: route,
+                type: 'POST',
+                data: formData,
+                success: function(response) {
+                    if (response == 'true') {
+                        toastr.success('Enquiry Submit', 'Success');
+                        location.reload();
+                    }
+                },
+                error: function(err) {
+                    console.log(err);
                 }
-            },
-            error: function(err) {
-                console.log(err);
-            }
-        });
+            });
+        }
     });
 
     function courseTab(val) {

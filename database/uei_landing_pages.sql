@@ -26,17 +26,32 @@ CREATE TABLE `enquiries` (
   `email` text NOT NULL,
   `number` text NOT NULL,
   `message` text DEFAULT NULL,
+  `contact_consent` tinyint(1) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `enquiries` */
 
-insert  into `enquiries`(`id`,`name`,`email`,`number`,`message`,`created_at`,`updated_at`) values 
-(4,'satyam','satyam@gmail.com','8989898989','B school project completed','2024-04-11 05:00:21','2024-04-11 05:00:21'),
-(5,'shobit','shobit@gmail.com','8989898989','frontend design completed','2024-04-11 05:00:55','2024-04-11 05:00:55'),
-(6,'avinash','avinash@gmail.com','8989898989','testing','2024-04-11 05:01:21','2024-04-11 05:01:21');
+insert  into `enquiries`(`id`,`name`,`email`,`number`,`message`,`contact_consent`,`created_at`,`updated_at`) values 
+(4,'satyam','satyam@gmail.com','8989898989','B school project completed',NULL,'2024-04-11 05:00:21','2024-04-11 05:00:21'),
+(5,'shobit','shobit@gmail.com','8989898989','frontend design completed',NULL,'2024-04-11 05:00:55','2024-04-11 05:00:55'),
+(6,'avinash','avinash@gmail.com','8989898989','testing',NULL,'2024-04-11 05:01:21','2024-04-11 05:01:21'),
+(8,'raman','raman@gmail.com','8989898989','test',NULL,'2024-04-11 08:52:20','2024-04-11 08:52:20'),
+(9,'ashish','ashish@gmail.com','8989898989','testing',NULL,'2024-04-11 08:53:13','2024-04-11 08:53:13'),
+(12,'ramandeep singh','ramandeep@gmail.com','8989898989','test',NULL,'2024-04-12 04:40:29','2024-04-12 04:40:29'),
+(13,'test','test2@gmail.com','7878787878','test',NULL,'2024-04-12 04:45:37','2024-04-12 04:45:37'),
+(14,'asdasdasda','sdasdasda@gmail.com','1212121212','12121212121212',NULL,'2024-04-12 05:17:18','2024-04-12 05:17:18'),
+(15,'ashish','ashish@gmail.com','8989898989','asdasdasdasdas',NULL,'2024-04-12 05:20:48','2024-04-12 05:20:48'),
+(16,'SHOBIT','shobitthakur83@gmail.com','7508953470','Testing',NULL,'2024-04-12 07:57:23','2024-04-12 07:57:23'),
+(17,'asdfasdf','asdfas@gmail.com','9898989898','rtyurtuyrtuyrt',NULL,'2024-04-12 10:30:19','2024-04-12 10:30:19'),
+(18,'komal','komal@gmail.com','9898989898','testing',NULL,'2024-04-12 11:29:22','2024-04-12 11:29:22'),
+(19,'asdasas','dasdas@gamil.com','8989898989','jkhsdlkfjhalsdf',NULL,'2024-04-12 11:33:47','2024-04-12 11:33:47'),
+(20,'qweqwe','qwerqw@gmail.com','8989898989','test',NULL,'2024-04-12 11:34:35','2024-04-12 11:34:35'),
+(21,'weqwe','qwerq@gmail.com','8989898989','jadkdfasd',NULL,'2024-04-12 11:36:30','2024-04-12 11:36:30'),
+(22,'asdfasdf','asdfas@gmail.com','6767676767','asdasdasd',NULL,'2024-04-12 11:36:55','2024-04-12 11:36:55'),
+(23,'gopal','gopal@gmail.com','7878787878','testing',NULL,'2024-04-12 11:38:25','2024-04-12 11:38:25');
 
 /*Table structure for table `failed_jobs` */
 

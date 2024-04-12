@@ -468,6 +468,27 @@ input.error-placeholder::placeholder , textarea.error-placeholder::placeholder {
     color: red;
 }
 
+.sidebarCross{
+    display: none;
+    position: absolute;
+    left: 15px;
+    font-size: 25px;
+    top: 8px;
+}
+
+.concentMain{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.concentMain label{
+    font-size: 14px;
+    margin-left: 20px;
+}
+.concentMain input{
+    width: 50px;
+    height: 50px;
+}
 @media screen and (max-width: 1300px) {
 
     .container{
@@ -494,6 +515,11 @@ input.error-placeholder::placeholder , textarea.error-placeholder::placeholder {
         box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
         z-index: 1;
         top: 0;
+        transition: 0.3 ease-in;
+    }
+
+    span.hamburger.active + .menu a.sidebarCross{
+        display: flex;
     }
     .aboutMain{
         flex-wrap: wrap;
@@ -548,3 +574,4 @@ input.error-placeholder::placeholder , textarea.error-placeholder::placeholder {
 
     }
   }
+
