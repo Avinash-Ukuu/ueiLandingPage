@@ -23,7 +23,7 @@ class EnquiryRequest extends FormRequest
     {
         return [
             'name'      =>'required',
-            'number'    =>'required|number|min:10|max:11',
+            // 'number'    =>'required|number|min:10|max:15',
             'email'     =>'required',
             'message'   =>'required',
         ];
