@@ -32,10 +32,12 @@
                         <div class="logo">
                             <img src="{{ asset('assets/frontend/asset/images/logo.webp') }}" alt="">
                         </div>
-                        <div class="MENU">
+                        <span class="hamburger"><img src="{{ asset('assets/frontend/asset/images/bars.png') }}" alt=""></span>
+                        <div class="menu">
                             <nav>
                                 <ul class="menu_list">
-                                    <a href="">
+                                    <a href="javascript:void(0)" class="">×</a>
+                                    <a href="javascript:void(0)">
                                         <li>HOME</li>
                                     </a>
                                     <a href="#about-section">
@@ -65,8 +67,8 @@
 
 
                     <div class="CommanButton">
-                        <a href="#" class="CommanButton orange">Get a Call</a>
-                        <a href="javascript:void(0)" class="CommanButton black" id="enquiryPopup">Enquire Now</a>
+                        <a href="#" class="CommanButton orange coustomOpenForm">Get a Call</a>
+                        <a href="javascript:void(0)" class="CommanButton black coustomOpenForm">Enquire Now</a>
                     </div>
                     <div class="arrow-down">
                         <img src="{{ asset('assets/frontend/asset/images/Link → arrow-down.png.png') }}" alt="">
@@ -172,7 +174,7 @@
                         </span>
                         <p>BACHELORS IN
                             HOSPITALITY MANAGEMENT</p>
-                        <a href="">Know More</a>
+                        <a href="javascript:void(0)" class="coustomOpenForm">Know More</a>
                     </div>
                     <div class="programMax degreeCourses">
                         <span>
@@ -180,7 +182,7 @@
                         </span>
                         <p>BACHELORS IN
                             HOSPITALITY MANAGEMENT <BR /> (International Specialization)</p>
-                        <a href="">Know More</a>
+                        <a href="javascript:void(0)" class="coustomOpenForm">Know More</a>
                     </div>
                     <div class="programMax degreeCourses">
                         <span>
@@ -188,7 +190,7 @@
                         </span>
                         <p>BACHELORS IN
                             HOSPITALITY MANAGEMENT<BR /> (Culinary Specialization)</p>
-                        <a href="">Know More</a>
+                        <a href="javascript:void(0)" class="coustomOpenForm">Know More</a>
                     </div>
                     <!-- degree Courses -->
 
@@ -201,21 +203,21 @@
                             <img src="{{ asset('assets/frontend/asset/images/Fp.png') }}" alt="courseimg">
                         </span>
                         <p>FOOD PRODUCTION</p>
-                        <a href="">Know More</a>
+                        <a href="javascript:void(0)" class="coustomOpenForm">Know More</a>
                     </div>
                     <div class="programMax deplomaCourse">
                         <span>
                             <img src="{{ asset('assets/frontend/asset/images/backrey.png') }}" alt="courseimg">
                         </span>
                         <p>BAKERY & CONFECTIONERY</p>
-                        <a href="">Know More</a>
+                        <a href="javascript:void(0)" class="coustomOpenForm">Know More</a>
                     </div>
                     <div class="programMax deplomaCourse">
                         <span>
                             <img src="{{ asset('assets/frontend/asset/images/hm.png') }}" alt="courseimg">
                         </span>
                         <p>HOTEL MANAGEMENT</p>
-                        <a href="">Know More</a>
+                        <a href="javascript:void(0)" class="coustomOpenForm">Know More</a>
                     </div>
 
 
@@ -231,28 +233,28 @@
                             <img src="{{ asset('assets/frontend/asset//images/fb.png') }}" alt="courseimg">
                         </span>
                         <p>CERTIFICATE IN F&B SERVICE</p>
-                        <a href="">Know More</a>
+                        <a href="javascript:void(0)" class="coustomOpenForm">Know More</a>
                     </div>
                     <div class="programMax certificationCourse">
                         <span>
                             <img src="{{ asset('assets/frontend/asset//images/fb.png') }}" alt="courseimg">
                         </span>
                         <p>CERTIFICATE IN F&B PRODUCTION</p>
-                        <a href="">Know More</a>
+                        <a href="javascript:void(0)" class="coustomOpenForm">Know More</a>
                     </div>
                     <div class="programMax certificationCourse">
                         <span>
                             <img src="{{ asset('assets/frontend/asset/images/hs.png') }}" alt="courseimg">
                         </span>
                         <p>CERTIFICATE IN HOUSEKEEPING MANAGEMENT</p>
-                        <a href="">Know More</a>
+                        <a href="javascript:void(0)" class="coustomOpenForm">Know More</a>
                     </div>
                     <div class="programMax certificationCourse">
                         <span>
                             <img src="{{ asset('assets/frontend/asset//images/fo.png') }}" alt="courseimg">
                         </span>
                         <p>CERTIFICATE IN FRONT OFFICE MANAGEMENT</p>
-                        <a href="">Know More</a>
+                        <a href="javascript:void(0)" class="coustomOpenForm">Know More</a>
                     </div>
 
                     <!-- Certification Course -->
@@ -290,16 +292,24 @@
                                 @csrf
                                 <input type="hidden" name="honeyspot">
                                 <label for="name">Your Name</label> &nbsp;<span style="color: red">*</span>
-                                <input type="text" name="name" placeholder="Your Name">
+                                <div class="inputContainer">
+                                    <input type="text" name="name" placeholder="Your Name">
+                                </div>
 
                                 <label for="email">Email</label>&nbsp;<span style="color: red">*</span>
-                                <input type="email" name="email" placeholder="Email">
+                                <div class="inputContainer">
+                                    <input type="email" name="email" placeholder="Email">
+                                </div>
 
                                 <label for="mobile">Number</label>&nbsp;<span style="color: red">*</span>
-                                <input type="tel" name="number" placeholder="Your Mobile Number">
+                                <div class="inputContainer">
+                                    <input type="tel" name="number" placeholder="Your Mobile Number">
+                                </div>
 
                                 <label for="message">Message</label>&nbsp;<span style="color: red">*</span>
-                                <textarea name="message" placeholder="Message"></textarea>
+                                <div class="inputContainer">
+                                    <textarea name="message" placeholder="Message"></textarea>
+                                </div>
 
                                 <input class="submit_button" type="submit" value="Submit">
                             </form>
@@ -314,8 +324,9 @@
         <div class="popup" style="display: none">
             <div class="container">
                 <div class="popupmain">
-                    <a href="javascript:void(0)" class="close-btn">×</a>
+
                     <div class="form">
+                        <a href="javascript:void(0)" class="close-btn">×</a>
                         <form class="enquiry-form" autocomplete="off">
                             @csrf
                             <input type="hidden" name="honeyspot">
@@ -347,11 +358,15 @@
 
 <script>
     $(document).ready(function() {
-        $("#enquiryPopup").on('click', function() {
+
+        $(".hamburger").on("click" , function(){
+            $(".menu").css("right" , "0")
+        })
+
+        $(".coustomOpenForm").on('click', function() {
             $(".popup").css('display', 'block');
             $("body").css('overflow', 'hidden');
         });
-
         $(".close-btn").on('click', function() {
             $(".popup").css('display', 'none');
             $("body").css('overflow', 'auto');
@@ -360,14 +375,54 @@
 
     $('.enquiry-form').on('submit', function() {
         event.preventDefault();
-        var isEmpty = false;
-        $(this).find('input[type="text"], input[type="email"], input[type="tel"], textarea').each(function() {
-            if ($.trim($(this).val()) === '') {
-                isEmpty = true;
-            }
-        });
-        if (isEmpty) {
-            alert('All fields are required.');
+        var isValid = true;
+
+        var $form = $(this);
+        var $name = $form.find('input[name="name"]');
+        var $email = $form.find('input[name="email"]');
+        var $number = $form.find('input[name="number"]');
+        var $message = $form.find('textarea[name="message"]');
+
+        // Clear previous error messages
+        $form.find('.error-message').remove();
+
+        // Validate name
+        if ($.trim($name.val()) === '') {
+            isValid = false;
+            $name.attr("placeholder", "Name Field is Required");
+            // Add a class to your name input when validation fails
+            $name.addClass("error-placeholder");
+        }
+
+        // Validate email
+        var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        if (!emailPattern.test($email.val())) {
+            isValid = false;
+            $email.attr("placeholder", "Email Field is Required");
+            // Add a class to your email input when validation fails
+            $email.addClass("error-placeholder");
+        }
+
+        // Validate phone number (exactly 10 digits)
+        var phonePattern = /^\d{10}$/;
+        if (!phonePattern.test($number.val())) {
+            isValid = false;
+            $number.attr("placeholder", "Number Field is Required");
+            // Add a class to your number input when validation fails
+            $number.addClass("error-placeholder");
+        }
+
+        // Validate message
+        if ($.trim($message.val()) === '') {
+            isValid = false;
+            $message.attr("placeholder", "Message Field is Required");
+            // Add a class to your message input when validation fails
+            $message.addClass("error-placeholder");
+        }
+
+        if (!isValid) {
+            // If validation fails, stop form submission and alert the user
+            alert('Please enter correct data in the form.');
             return;
         }
         var formData = $(this).serialize();
@@ -402,7 +457,7 @@
             'color': 'white',
             'padding': '0 8px'
         });
-        $('.' + val).css('display', 'block');
+        $('.' + val).css('display', 'flex');
     }
 </script>
 

@@ -39,6 +39,10 @@ ul {
     margin-bottom: 20px;
 }
 
+.hamburger{
+    display: none;
+}
+
 .Commanheading::before {
     content: '';
     left: 0;
@@ -95,6 +99,7 @@ ul {
 .top_header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .menu_list {
@@ -422,12 +427,13 @@ font-size: 52px;
 
   .popupmain .form{
     margin: auto;
+    position: relative;
   }
 
   .close-btn {
     position: absolute;
     top: 2px;
-    right:38%;
+    right:0;
     padding: 10px 15px;
     font-size: 24px;
     cursor: pointer;
@@ -446,3 +452,99 @@ font-size: 52px;
     background: #821600;
     padding: 0 8px;
 }
+
+.popup::before{
+    content: '';
+    position: absolute;
+    top: -92px;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #0000008a;
+    z-index: -1;
+}
+
+input.error-placeholder::placeholder , textarea.error-placeholder::placeholder {
+    color: red;
+}
+
+@media screen and (max-width: 1300px) {
+
+    .container{
+        width: 100%;
+    }
+
+    .rate_pass{
+        width: 100%;
+    }
+
+    .aboutMain , .serviceContainer , .listMain, .programMain{
+        justify-content: space-evenly;
+    }
+
+  }
+
+  @media screen and (max-width: 1200px) {
+    .menu {
+        position: fixed;
+        right: -500px;
+        width: 40%;
+        height: 100vh;
+        background: #ffffff;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        z-index: 1;
+        top: 0;
+    }
+    .aboutMain{
+        flex-wrap: wrap;
+        padding: 0 3rem;
+    }
+
+    .commanjustifty{
+        width: 100%;
+    }
+
+    .programMax span img{
+        width: 100%;
+    }
+
+    .commanabout{
+        width: 100%;
+    }
+    .commanabout img{
+        margin: auto;
+    }
+
+    .listMain{
+        flex-wrap: wrap;
+    }
+    .testiList{
+        width: 100%;
+    }
+    .form{
+        width: 100%;
+    }
+    .listMain{
+        padding: 20px 3rem;
+    }
+    .programMax{
+        width: 47%;
+    }
+    .serviceContainer{
+        flex-wrap: wrap;
+    }
+    .serviceList{
+        width: 40%;
+    }
+
+    .menu_list{
+        display: flex;
+        flex-direction: column;
+    }
+    .hamburger{
+        display: flex;
+        width: 30px;
+        height: 30px;
+
+    }
+  }
