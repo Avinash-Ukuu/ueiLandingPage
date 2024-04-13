@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Enquiry;
-// use App\Mail\EnquiryMail;
-// use Illuminate\Http\Request;
-// use Illuminate\Support\Facades\Mail;
+use App\Mail\EnquiryMail;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\EnquiryRequest;
 
 class EnquiryController extends Controller
@@ -22,7 +22,7 @@ class EnquiryController extends Controller
             $model->message             =       $inputs['message'];
             $model->contact_consent     =       ($inputs['contactConsent']=='on'? 1 :0);
             $model->save();
-            // Mail::to('avinash.ukuu@gmail.com')->send(new EnquiryMail($model));
+            Mail::to('ueijalandhar@gmail.com')->send(new EnquiryMail($model));
             return 'true';
         }
         return 'failed';
