@@ -41,16 +41,16 @@
                                     <a href="javascript:void(0)">
                                         <li>HOME</li>
                                     </a>
-                                    <a href="#about-section">
+                                    <a href="#about-section" class="navSection">
                                         <li>ABOUT US</li>
                                     </a>
-                                    <a href="#service-section">
+                                    <a href="#service-section" class="navSection">
                                         <li>SERVICES</li>
                                     </a>
-                                    <a href="#course-section">
+                                    <a href="#course-section" class="navSection">
                                         <li>Courses</li>
                                     </a>
-                                    <a href="#contact-us-section">
+                                    <a href="#contact-us-section" class="navSection">
                                         <li>Contact Us</li>
                                     </a>
                                 </ul>
@@ -304,7 +304,7 @@
 
                                 <label for="mobile">Number</label>&nbsp;<span style="color: red">*</span>
                                 <div class="inputContainer">
-                                    <input type="tel" name="number" placeholder="Your Mobile Number">
+                                    <input type="tel" name="number" id="phone" placeholder="Your Mobile Number">
                                 </div>
 
                                 <label for="message">Message</label>&nbsp;<span style="color: red">*</span>
@@ -332,6 +332,14 @@
             </div>
         </section>
 
+        <div id="popup" class="thanksPopup">
+            <div class="popup-content">
+                <span class="close-button">&times;</span>
+               <span class="popupImage"><img src="{{asset('assets/frontend/asset/images/chef.jpg')}}" alt="Cooking Image" style="width:100%;"></span>
+                <h2>Thank you for submitting your enquiry</h2>
+            </div>
+        </div>
+
         <div class="popup" style="display: none">
             <div class="container">
                 <div class="popupmain">
@@ -348,14 +356,14 @@
                             <input type="email" name="email" placeholder="Email">
 
                             <label for="mobile">Number</label>&nbsp;<span style="color: red">*</span>
-                            <input type="tel" name="number" placeholder="Your Mobile Number">
+                            <input type="tel" name="number" id="phonePopup" placeholder="Your Mobile Number">
 
                             <label for="message">Message</label>&nbsp;<span style="color: red">*</span>
                             <textarea name="message" placeholder="Message"></textarea>
 
                             <div class="concentMain">
-                                <input type="checkbox" name="contactConsent" id="checkConsent">
-                                <label for="checkConsent">By submitting this enquiry I agree to be contacted in the
+                                <input type="checkbox" name="contactConsent" id="checkConsentPopup">
+                                <label for="checkConsentPopup">By submitting this enquiry I agree to be contacted in the
                                     most suitable manner (by phone or email) in order to respond to my
                                     enquiry.</label>
                             </div>
@@ -371,6 +379,25 @@
             </div>
         </div>
 
+        <div id="loader">
+            <h1>Please Wait</h1>
+            <div id="cooking">
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+                <div id=area>
+                    <div id="sides">
+                        <div id="pan"></div>
+                        <div id="handle"></div>
+                    </div>
+                    <div id="pancake">
+                        <div id="pastry"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
     </main>
@@ -380,6 +407,13 @@
 
 <script>
     $(document).ready(function() {
+
+        $('.navSection').on('click', function(event) {
+            event.preventDefault();
+            var targetSectionID = $(this).attr('href');
+            var targetSection = $(targetSectionID)[0];
+            targetSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
 
         $(".hamburger").on("click", function() {
             $(".menu").css("right", "0");
@@ -398,6 +432,23 @@
         $(".close-btn").on('click', function() {
             $(".popup").css('display', 'none');
             $("body").css('overflow', 'auto');
+        });
+
+        $("#phonePopup").on('input', function() {
+            var inputValue = $("#phonePopup").val();
+            var filteredInput = inputValue.replace(/[^0-9]/g, '');
+            if (filteredInput.length > 10) {
+                filteredInput = filteredInput.substring(0, 10);
+            }
+            $("#phonePopup").val(filteredInput);
+        });
+        $("#phone").on('input', function() {
+            var inputValue = $("#phone").val();
+            var filteredInput = inputValue.replace(/[^0-9]/g, '');
+            if (filteredInput.length > 10) {
+                filteredInput = filteredInput.substring(0, 10);
+            }
+            $("#phone").val(filteredInput);
         });
     });
 
@@ -463,6 +514,14 @@
             $form.find('#contact-consent').show();
             return false;
         } else {
+            $('.submit_button').prop('disabled',true);
+
+            var popupForm = $('.popup').css('display');
+
+            if (popupForm !== 'none') {
+                $('.popup').css('display','none');
+            }
+            $('#loader').css('display','block');
             var formData = $form.serialize();
             var route = "{{ route('enquirySubmit') }}";
             $.ajax({
@@ -471,12 +530,23 @@
                 data: formData,
                 success: function(response) {
                     if (response == 'true') {
-                        toastr.success('Enquiry Submit', 'Success');
-                        location.reload();
+                        $('#loader').css('display','none');
+
+
+                        const $popup = $('#popup');
+                        const $closeButton = $('.close-button');
+                        $popup.css('display','block');
+
+                        function closePopup() {
+                            $popup.css('display','block');
+                            location.reload();
+                        }
+                        $closeButton.click(closePopup);
                     }
                 },
                 error: function(err) {
                     console.log(err);
+                    $('#loader').css('display','none');
                 }
             });
         }

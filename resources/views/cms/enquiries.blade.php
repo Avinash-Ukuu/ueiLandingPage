@@ -24,6 +24,7 @@
                     <table id="example1" class="table table-bordered table-hover">
                         <thead>
                             <tr>
+                                <th>Id</th>
                                 <th>Name</th>
                                 <th>Email</th>
                                 <th>Number</th>
@@ -32,17 +33,6 @@
                             </tr>
                         </thead>
                         <tbody>
-
-                            @foreach ($enquiries as $enquiry)
-                                <tr>
-                                    <td>{{ ucwords($enquiry->name) }}</td>
-                                    <td>{{ $enquiry->email }}</td>
-                                    <td>{{ $enquiry->number }}</td>
-                                    <td>{{ $enquiry->message }}</td>
-                                    <td>{{ Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $enquiry->created_at)->format('d/M/Y') }}
-                                    </td>
-                                </tr>
-                            @endforeach
 
                         </tbody>
                     </table>
@@ -53,30 +43,45 @@
     </div>
     <!-- /.card -->
 @endsection
-@section('footerScripts')
+@section('footerScript')
     <script>
+
         $(document).ready(function() {
 
+            console.log('sdkhaklsda');
             $('#example1').DataTable({
-                "columns": [{
-                        "name": "Name"
+                "responsive": true,
+                "processing": true,
+                "serverSide": true,
+                ajax: "{{ route('enquiryList') }}",
+                order: [],
+                sorting: true,
+                columns: [{
+                        data: 'DT_RowIndex',
+                        name: 'Index',
+                        orderable: false,
+                        searchable: false
                     },
                     {
-                        "name": "Email"
+                        data: 'name',
+                        name: 'name',
                     },
                     {
-                        "name": "Number"
+                        data: 'email',
+                        name: 'email',
                     },
                     {
-                        "name": "Message"
+                        data: 'number',
+                        name: 'number',
                     },
                     {
-                        "name": "Date",
-                        "type": "date",
-                        "orderDataType": "dom-text",
-                        "targets": 3 // Index of the "Date" column
+                        data: 'message',
+                        name: 'message',
                     },
-
+                    {
+                        data: 'date',
+                        name: 'date',
+                    },
                 ]
             });
         });
