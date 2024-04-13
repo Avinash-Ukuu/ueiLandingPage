@@ -63,8 +63,8 @@
                     <h1>
                         INDIA'S TOP <br /><br />
                         HOTEL MANAGEMENT INSTITUTE<br /><br />
-                        Recognized Courses In Hotel Management & Cooking</h1>
-                    <p>Recognized Courses In Hotel Management & Cooking</p>
+                        Recognized Courses in Hotel Management & Cooking</h1>
+                    <p>Recognized Courses in Hotel Management & Cooking</p>
 
 
                     <div class="CommanButton">
@@ -93,7 +93,7 @@
                     </div>
                     <div class="rates">
                         <h3>100+</h3>
-                        <p>TIE-UP UNIVERISITY</p>
+                        <p>TIE - UP UNIVERISITY</p>
                     </div>
 
                 </div>
@@ -107,10 +107,10 @@
                             <p class="Commanparagraph white">UEI Global is coming together of industry experts with a
                                 vision to offer world class education to future professionals in a wide field of service
                                 sector. Programs in Hospitality Management and Business Management both at Under
-                                Graduate and Post Graduate level are offered through 13 state-of-the-art campuses across
+                                Graduate and Post Graduate level are offered through 13 state of the art campuses across
                                 12 cities. The curriculum of the programs are crafted to bridge the ever growing
-                                demand-supply gap in the service industry, there is a unique blend of vocational skills
-                                training along with formal education..</p>
+                                demand supply gap in the service industry, there is a unique blend of vocational skills
+                                training along with formal education.</p>
                         </div>
                     </div>
                     <div class="commanabout">
