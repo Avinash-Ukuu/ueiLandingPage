@@ -39,13 +39,13 @@
                                 <ul class="menu_list">
                                     <a href="javascript:void(0)" class="sidebarCross">×</a>
                                     <a href="javascript:void(0)">
-                                        <li>HOME</li>
+                                        <li>Home</li>
                                     </a>
                                     <a href="#about-section" class="navSection">
-                                        <li>ABOUT US</li>
+                                        <li>About us</li>
                                     </a>
                                     <a href="#service-section" class="navSection">
-                                        <li>SERVICES</li>
+                                        <li>Services</li>
                                     </a>
                                     <a href="#course-section" class="navSection">
                                         <li>Courses</li>
@@ -60,20 +60,27 @@
                     </div>
                 </header>
                 <div class="Amazing">
-                    <h1>
-                        INDIA'S TOP <br /><br />
-                        HOTEL MANAGEMENT INSTITUTE<br /><br />
-                        Recognized Courses in Hotel Management & Cooking</h1>
-                    <p>Recognized Courses in Hotel Management & Cooking</p>
+                    <div class="content">
+                        <h1>
+                           <red> INDIA'S TOP</red> HOTEL MANAGEMENT INSTITUTE<br/>
+                            <size>Recognized Courses in Hotel Management & Cooking</size></h1>
+                        <p>Best Cooking Course in All Over Punjab </p>
 
 
-                    <div class="CommanButton">
-                        <a href="#" class="CommanButton orange coustomOpenForm">Get a Call</a>
-                        <a href="javascript:void(0)" class="CommanButton black coustomOpenForm">Enquire Now</a>
+                        <div class="CommanButton">
+                            <a href="#" class="CommanButton orange coustomOpenForm">Get a Call</a>
+                            <a href="javascript:void(0)" class="CommanButton black coustomOpenForm">Enquire Now</a>
+                        </div>
+                        <div class="arrow-down">
+                            <img src="{{ asset('assets/frontend/asset/images/Link → arrow-down.png.png') }}"
+                                alt="">
+
+                        </div>
+
                     </div>
-                    <div class="arrow-down">
-                        <img src="{{ asset('assets/frontend/asset/images/Link → arrow-down.png.png') }}" alt="">
 
+                    <div class="image">
+                        <img src="{{ asset('assets/frontend/asset/images/kapildevOne.jpeg') }}" alt="kapil dev">
                     </div>
 
                 </div>
@@ -88,12 +95,12 @@
                         <p>INDUSTRY PARTNERS</p>
                     </div>
                     <div class="rates">
-                        <h3>99.9%</h3>
-                        <p>PLACEMENTS</p>
+                        <h3>100%</h3>
+                        <p>Placement Assistance</p>
                     </div>
                     <div class="rates">
-                        <h3>100+</h3>
-                        <p>TIE - UP UNIVERISITY</p>
+                        <h3>30+</h3>
+                        <p>UGC Approved Program</p>
                     </div>
 
                 </div>
@@ -304,7 +311,8 @@
 
                                 <label for="mobile">Number</label>&nbsp;<span style="color: red">*</span>
                                 <div class="inputContainer">
-                                    <input type="tel" name="number" id="phone" placeholder="Your Mobile Number">
+                                    <input type="tel" name="number" id="phone"
+                                        placeholder="Your Mobile Number">
                                 </div>
 
                                 <label for="message">Message</label>&nbsp;<span style="color: red">*</span>
@@ -335,7 +343,8 @@
         <div id="popup" class="thanksPopup">
             <div class="popup-content">
                 <span class="close-button">&times;</span>
-               <span class="popupImage"><img src="{{asset('assets/frontend/asset/images/chef.jpg')}}" alt="Cooking Image" style="width:100%;"></span>
+                <span class="popupImage"><img src="{{ asset('assets/frontend/asset/images/chef.jpg') }}"
+                        alt="Cooking Image" style="width:100%;"></span>
                 <h2>Thank you for submitting your enquiry</h2>
             </div>
         </div>
@@ -363,7 +372,8 @@
 
                             <div class="concentMain">
                                 <input type="checkbox" name="contactConsent" id="checkConsentPopup">
-                                <label for="checkConsentPopup">By submitting this enquiry I agree to be contacted in the
+                                <label for="checkConsentPopup">By submitting this enquiry I agree to be contacted in
+                                    the
                                     most suitable manner (by phone or email) in order to respond to my
                                     enquiry.</label>
                             </div>
@@ -412,7 +422,10 @@
             event.preventDefault();
             var targetSectionID = $(this).attr('href');
             var targetSection = $(targetSectionID)[0];
-            targetSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            targetSection.scrollIntoView({
+                behavior: 'smooth',
+                block: 'center'
+            });
         });
 
         $(".hamburger").on("click", function() {
@@ -514,14 +527,14 @@
             $form.find('#contact-consent').show();
             return false;
         } else {
-            $('.submit_button').prop('disabled',true);
+            $('.submit_button').prop('disabled', true);
 
             var popupForm = $('.popup').css('display');
 
             if (popupForm !== 'none') {
-                $('.popup').css('display','none');
+                $('.popup').css('display', 'none');
             }
-            $('#loader').css('display','block');
+            $('#loader').css('display', 'block');
             var formData = $form.serialize();
             var route = "{{ route('enquirySubmit') }}";
             $.ajax({
@@ -530,15 +543,15 @@
                 data: formData,
                 success: function(response) {
                     if (response == 'true') {
-                        $('#loader').css('display','none');
+                        $('#loader').css('display', 'none');
 
 
                         const $popup = $('#popup');
                         const $closeButton = $('.close-button');
-                        $popup.css('display','block');
+                        $popup.css('display', 'block');
 
                         function closePopup() {
-                            $popup.css('display','block');
+                            $popup.css('display', 'block');
                             location.reload();
                         }
                         $closeButton.click(closePopup);
@@ -546,7 +559,7 @@
                 },
                 error: function(err) {
                     console.log(err);
-                    $('#loader').css('display','none');
+                    $('#loader').css('display', 'none');
                 }
             });
         }

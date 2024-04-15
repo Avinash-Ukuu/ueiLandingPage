@@ -70,7 +70,6 @@ ul {
 
 
 .CommanButton {
-    margin: auto;
     gap: 24px;
     display: flex;
     align-items: center;
@@ -127,23 +126,48 @@ ul {
 
 .Amazing {
 
-    padding: 8rem 3rem;
+    padding: 3rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content{
+    width: 55%;
+    text-align: left;
+}
+
+.image{
+    width: 48%;
+    display: flex;
+}
+
+.image img{
+    width: 100%;
 }
 
 .Amazing h1 {
     margin: auto;
-    text-align: center;
-    font-size: 50px;
+    text-align: left;
+    font-size: 34px;
+    line-height: 50px;
 }
 
 .Amazing p {
     line-height: 28px;
-    padding: 20px;
-    margin: auto;
-    width: 50%;
-    text-align: center;
+    padding: 20px 0;
+    text-align: left;
     font-size: 14px;
 }
+
+red{
+    color: red;
+}
+
+/* size{
+    font-size: 26px;
+    line-height: 40px
+} */
 
 /* section 2 */
 .ABOUT {
