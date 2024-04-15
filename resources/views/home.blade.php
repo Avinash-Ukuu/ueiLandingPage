@@ -558,7 +558,7 @@
                 success: function(response) {
                     if (response == 'true') {
                         $('#loader').css('display', 'none');
-                        window.location.href = "{{ route('thankyou') }}";
+                        window.open("{{ route('thankyou') }}", '_blank');
                     }
                 },
                 error: function(err) {

@@ -53,7 +53,7 @@
                             <h2>Thankyou for your Enquire Our Team Will Contact You As Soon As Possible !</h2>
                         </div>
 
-                        <a href="{{ route('home') }}" class="CommanButton black coustomOpenForm">Home</a>
+                        {{-- <a href="{{ route('home') }}" class="CommanButton black coustomOpenForm">Home</a> --}}
                     </div>
 
                     {{-- <div class="imageMain">
