@@ -363,15 +363,6 @@
             </div>
         </section>
 
-        <div id="popup" class="thanksPopup">
-            <div class="popup-content">
-                <span class="close-button">&times;</span>
-                <span class="popupImage"><img src="{{ asset('assets/frontend/asset/images/chef.jpg') }}"
-                        alt="Cooking Image" style="width:100%;"></span>
-                <h2>Thank you for submitting your enquiry</h2>
-            </div>
-        </div>
-
         <div class="popup" style="display: none">
             <div class="container">
                 <div class="popupmain">
@@ -567,17 +558,7 @@
                 success: function(response) {
                     if (response == 'true') {
                         $('#loader').css('display', 'none');
-
-
-                        const $popup = $('#popup');
-                        const $closeButton = $('.close-button');
-                        $popup.css('display', 'block');
-
-                        function closePopup() {
-                            $popup.css('display', 'block');
-                            location.reload();
-                        }
-                        $closeButton.click(closePopup);
+                        window.location.href = "{{ route('thankyou') }}";
                     }
                 },
                 error: function(err) {
