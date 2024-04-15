@@ -8,9 +8,31 @@
     <link rel="stylesheet" href="{{ asset('assets/frontend/styles/style.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
     <title>UEI Global Jalandhar</title>
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MGPXLD4G');
+    </script>
+    <!-- End Google Tag Manager -->
 </head>
 
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MGPXLD4G" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <main>
 
         <!-- commna heading -->
@@ -62,8 +84,9 @@
                 <div class="Amazing">
                     <div class="content">
                         <h1>
-                           <red> INDIA'S TOP</red> HOTEL MANAGEMENT INSTITUTE<br/>
-                            <size>Recognized Courses in Hotel Management & Cooking</size></h1>
+                            <red> INDIA'S TOP</red> HOTEL MANAGEMENT INSTITUTE<br />
+                            <size>Recognized Courses in Hotel Management & Cooking</size>
+                        </h1>
                         <p>Best Cooking Course in All Over Punjab </p>
 
 
