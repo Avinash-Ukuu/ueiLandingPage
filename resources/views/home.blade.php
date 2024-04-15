@@ -144,7 +144,7 @@
                         </div>
                     </div>
                     <div class="commanabout">
-                        <img src="{{ asset('assets/frontend/asset/images/about-image.png.png') }}" alt="">
+                        <img src="{{ asset('assets/frontend/asset/images/kapildevThree.png') }}" alt="">
                     </div>
                 </div>
             </div>

@@ -201,6 +201,10 @@ red{
     display: flex;
     width: 40%;
 }
+
+.commanabout img{
+    width: 100%;
+}
 .rate_pass{
     position: absolute;
     top: -100px;
