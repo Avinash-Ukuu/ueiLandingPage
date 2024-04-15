@@ -254,6 +254,7 @@ font-size: 52px;
     padding: 50px 13px;
     text-align: center;
     width: 24%;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 .serviceList:hover{
@@ -929,22 +930,41 @@ input.error-placeholder::placeholder , textarea.error-placeholder::placeholder {
     }
     .Amazing {
 
-        padding: 8rem 0rem;
+        padding: 3rem 0rem;
+        flex-wrap: wrap;
+    }
+
+    .content{
+        width: 100%;
+    }
+
+    .image{
+        width: 100%;
     }
 
     .Amazing h1{
-        font-size: 30px;
+        font-size: 25px;
     }
     .Amazing p{
         padding: 20px 0;
     }
     .rate_pass{
         flex-wrap: wrap;
+        position: initial;
+        padding: 30px;
+    }
+
+    .listMain{
+        padding: 20px 1rem;
     }
 
     .ABOUT{
-        padding: 230px 0;
+        padding: 0;
         padding-bottom: 65px;
+    }
+
+    .aboutMain{
+        padding: 0 2rem;
     }
 
     .rates{
@@ -965,6 +985,8 @@ input.error-placeholder::placeholder , textarea.error-placeholder::placeholder {
 
     .serviceList{
         width: 100%;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        margin-bottom: 30px;
     }
 
     .programMain{
