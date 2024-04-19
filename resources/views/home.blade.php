@@ -38,6 +38,10 @@
 
         gtag('config', 'AW-766337329');
     </script>
+    <!-- Event snippet for LeadFormSubmit conversion page -->
+    <script>
+        gtag('event', 'conversion', {'send_to': 'AW-766337329/uTc0CPDF5aYZELHCte0C'});
+    </script>
 </head>
 
 <body>
