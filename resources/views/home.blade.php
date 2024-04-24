@@ -44,6 +44,18 @@
             'send_to': 'AW-766337329/uTc0CPDF5aYZELHCte0C'
         });
     </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3VCFQSRD7Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-3VCFQSRD7Z');
+    </script>
 </head>
 
 <body>
