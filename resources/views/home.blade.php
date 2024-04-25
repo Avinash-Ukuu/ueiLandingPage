@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="UEI Global is a leading Hotel Management Institute in India, Offering Diplomas, Bachelor's Degrees. It Emphasizes Practical Training and Career Readiness, Ensuring Students are well-prepared for the Hospitality Industry.">
+    <meta name="keywords" content="Best Hotel Management Course,UEI Global of Hotel Management , Cooking Institute in Jalandhar, Best Hotel Management Course in Jalandhar,Cooking Courses,Cooking Classes,Best Cooking Course,
+                                    Chef Courses,Diploma in Hotel Management,Diploma in Bakery Course,Bakery and Confectionery Course,Cake Baking Course,Food and Production Course,Certification in F&B Service,Hotel Management Course,
+                                    Hotel Management Course near me,Cooking Course Near me,Jalandhar">
     <link rel="stylesheet" href="{{ asset('assets/frontend/styles/style.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
     <title>UEI Global Jalandhar</title>
