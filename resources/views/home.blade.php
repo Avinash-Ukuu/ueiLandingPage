@@ -596,6 +596,7 @@
                 success: function(response) {
                     if (response == 'true') {
                         $('#loader').css('display', 'none');
+                        location.reload();
                         window.open("{{ route('thankyou') }}", '_blank');
                     }
                 },
