@@ -129,7 +129,7 @@
 
 
                         <div class="CommanButton">
-                            <a href="#" class="CommanButton orange coustomOpenForm">Get a Call</a>
+                            <a href="tel:9803115151" class="CommanButton orange">Get a Call</a>
                             <a href="javascript:void(0)" class="CommanButton black coustomOpenForm">Enquire Now</a>
                         </div>
                         <div class="arrow-down">
