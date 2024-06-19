@@ -25,12 +25,70 @@
         })(window, document, 'script', 'dataLayer', 'GTM-MGPXLD4G');
     </script>
     <!-- End Google Tag Manager -->
+     <!-- Google tag (gtag.js) -->
+     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-766337329"></script>
+     <script>
+         window.dataLayer = window.dataLayer || [];
+
+         function gtag() {
+             dataLayer.push(arguments);
+         }
+         gtag('js', new Date());
+
+         gtag('config', 'AW-766337329');
+     </script>
+     <!-- Event snippet for LeadFormSubmit conversion page -->
+     <script>
+         gtag('event', 'conversion', {
+             'send_to': 'AW-766337329/uTc0CPDF5aYZELHCte0C'
+         });
+     </script>
+     <!-- Google tag (gtag.js) -->
+     <script async src="https://www.googletagmanager.com/gtag/js?id=G-3VCFQSRD7Z"></script>
+     <script>
+         window.dataLayer = window.dataLayer || [];
+
+         function gtag() {
+             dataLayer.push(arguments);
+         }
+         gtag('js', new Date());
+
+         gtag('config', 'G-3VCFQSRD7Z');
+     </script>
+     <!-- Google tag (gtag.js) -->
+     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16537435058"></script>
+     <script>
+         window.dataLayer = window.dataLayer || [];
+
+         function gtag() {
+             dataLayer.push(arguments);
+         }
+         gtag('js', new Date());
+
+         gtag('config', 'AW-16537435058');
+     </script>
+     <script>
+         gtag('config', 'AW-16537435058/q3eKCPGjjbEZELL31M09', {
+             'phone_conversion_number': '098031 15151'
+         });
+     </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16537435058"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'AW-16537435058');
+    </script>
 </head>
 
 <body>
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MGPXLD4G" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
+
+            <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/45836774.js"></script>
     <!-- End Google Tag Manager (noscript) -->
     <main>
         <div class="sectionContainer">
